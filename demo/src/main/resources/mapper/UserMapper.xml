@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <!-- Blocked full table query -->
+    <select id="findAll" resultType="com.example.demo.entity.User">
+        SELECT id, name, status FROM t_user
+    </select>
+
+    <!-- Allowed query with condition -->
+    <select id="findById" resultType="com.example.demo.entity.User">
+        SELECT id, name, status FROM t_user WHERE id = #{id}
+    </select>
+
+    <!-- Allowed full table query with @IgnoreFullTable -->
+    <select id="findAllAllowed" resultType="com.example.demo.entity.User">
+        SELECT id, name, status FROM t_user
+    </select>
+
+    <!-- Allowed full table delete with @IgnoreFullTable -->
+    <delete id="deleteAll">
+        DELETE FROM t_user
+    </delete>
+
+    <!-- Allowed full table update with @IgnoreFullTable -->
+    <update id="updateAllStatus">
+        UPDATE t_user SET status = 0
+    </update>
+
+</mapper>

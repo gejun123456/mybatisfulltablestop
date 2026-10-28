@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.mybatisfulltable.boot.mapper.UserMapper">
+
+    <select id="findAll" resultType="com.github.mybatisfulltable.boot.entity.User">
+        SELECT id, name, status FROM t_user
+    </select>
+
+    <select id="findById" resultType="com.github.mybatisfulltable.boot.entity.User">
+        SELECT id, name, status FROM t_user WHERE id = #{id}
+    </select>
+
+    <select id="findAllAllowed" resultType="com.github.mybatisfulltable.boot.entity.User">
+        SELECT id, name, status FROM t_user
+    </select>
+
+    <update id="updateStatusAll">
+        UPDATE t_user SET status = 0
+    </update>
+
+    <update id="updateStatusAllAllowed">
+        UPDATE t_user SET status = 0
+    </update>
+
+    <delete id="deleteAll">
+        DELETE FROM t_user
+    </delete>
+
+    <delete id="deleteAllAllowed">
+        DELETE FROM t_user
+    </delete>
+
+</mapper>

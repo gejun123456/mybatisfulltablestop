@@ -1,0 +1,37 @@
+# Build outputs
+target/
+build/
+*.class
+dependency-reduced-pom.xml
+
+# Maven & GPG sensitive files
+settings.xml
+*.gpg
+*.asc
+*.key
+secring.gpg
+pubring.gpg
+*.pfx
+*.p12
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+*.dump
+*.dumpstream
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
